@@ -1,13 +1,12 @@
 const express = require('express');
+const {getHomepage, getABC, getHoiDanIT} = require('../controllers/homeController');
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-    res.send('Hello World!');
-});
 
-router.get('/abc', (req,res)=>{
-    // res.send('<h1>fuck you</h1>');
-    res.render('sample.ejs');
-});
+//router.Method('/route', handler)
 
-module.exports = router;
+router.get('/', getHomepage);
+router.get('/abc', getABC);
+router.get('/hoidanit', getHoiDanIT);
+
+module.exports = router; //export default
